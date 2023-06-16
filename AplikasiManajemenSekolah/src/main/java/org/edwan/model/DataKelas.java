@@ -3,7 +3,7 @@ package org.edwan.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "data_kelas")
 public class DataKelas {
 
     @Id
