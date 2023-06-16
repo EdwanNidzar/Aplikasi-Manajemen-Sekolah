@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Data Kelas</title>
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2>Save Data Kelas</h2>
+    <br>
+
+    <form action="#" th:action="@{/saveDataKelas}" th:object="${dataKelas}" method="POST">
+        <div class="form-group">
+            <label for="namaKelas">Nama Kelas</label>
+            <input type="text" id="namaKelas" th:field="*{nama_kelas}" placeholder="Nama Kelas" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-info col-2">Save Data Kelas</button>
+    </form>
+    <hr>
+    <a th:href = "@{/datakelas}" class="btn btn-light"> Back</a>
+</div>
+</body>
+</html>
