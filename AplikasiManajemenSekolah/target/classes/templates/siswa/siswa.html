@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Siswa</title>
+</head>
+<body>
+<h1>Daftar Siswa</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NIS</th>
+    <th>Nama Siswa</th>
+    <th>Tempat Lahir</th>
+    <th>Tanggal Lahir</th>
+    <th>Jenis Kelamin</th>
+    <th>Alamat</th>
+    <th>Email</th>
+    <th>Nomor Telepon</th>
+    <th>Kelas</th>
+    <th>Jurusan</th>
+  </tr>
+  <tr th:each="siswa : ${siswaList}">
+    <td th:text="${siswa.id}"></td>
+    <td th:text="${siswa.nis}"></td>
+    <td th:text="${siswa.namaSiswa}"></td>
+    <td th:text="${siswa.tempatLahirSiswa}"></td>
+    <td th:text="${siswa.tanggalLahirSiswa}"></td>
+    <td th:text="${siswa.jenisKelaminSiswa}"></td>
+    <td th:text="${siswa.alamatSiswa}"></td>
+    <td th:text="${siswa.emailSiswa}"></td>
+    <td th:text="${siswa.nomorTelpSiswa}"></td>
+    <td th:text="${siswa.kelas.namaKelas}"></td>
+    <td th:text="${siswa.jurusan.namaJurusan}"></td>
+  </tr>
+</table>
+</body>
+</html>
