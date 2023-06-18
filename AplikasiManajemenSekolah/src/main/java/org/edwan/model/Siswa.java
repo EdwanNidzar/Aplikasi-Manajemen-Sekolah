@@ -19,7 +19,7 @@ public class Siswa {
     private String tempatLahirSiswa;
     private LocalDate tanggalLahirSiswa;
     private String jenisKelaminSiswa;
-    private String alamatSiswa;x
+    private String alamatSiswa;
 
     @Column(unique = true)
     private String emailSiswa;
