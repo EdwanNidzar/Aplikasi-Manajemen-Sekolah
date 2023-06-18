@@ -22,7 +22,7 @@
             <tbody>
             <tr th:each="j : ${listJurusan}">
                 <td th:text="${j.id}"></td>
-                <td th:text="${j.jurusan}"></td>
+                <td th:text="${j.namaJurusan}"></td>
                 <td> <a th:href="@{/updateJurusan/{id}(id=${j.id})}" class="btn btn-primary">Update</a>
                     <a th:href="@{/deleteJurusan/{id}(id=${j.id})}" class="btn btn-danger">Delete</a>
                 </td>

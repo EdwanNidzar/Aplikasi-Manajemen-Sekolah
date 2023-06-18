@@ -35,7 +35,7 @@ public class JurusanController {
     public String saveJurusan(@ModelAttribute("jurusan") Jurusan jurusan) {
 
         jurusanService.saveJurusan(jurusan);
-        return "redirect:/jurusan/jurusan";
+        return "redirect:/jurusan";
     }
 
     @GetMapping("/updateJurusan/{id}")
@@ -51,7 +51,7 @@ public class JurusanController {
     public String deleteDataKelas(@PathVariable(value = "id") long id) {
 
         this.jurusanService.deleteJurusanById(id);
-        return "redirect:/jurusan/jurusan";
+        return "redirect:/jurusan";
     }
 
 }

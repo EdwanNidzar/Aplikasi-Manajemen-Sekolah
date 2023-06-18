@@ -10,7 +10,7 @@ public class Jurusan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String jurusan;
+    private String namaJurusan;
 
     public long getId() {
         return id;
@@ -20,11 +20,11 @@ public class Jurusan {
         this.id = id;
     }
 
-    public String getJurusan() {
-        return jurusan;
+    public String getNamaJurusan() {
+        return namaJurusan;
     }
 
-    public void setJurusan(String jurusan) {
-        this.jurusan = jurusan;
+    public void setNamaJurusan(String namaJurusan) {
+        this.namaJurusan = namaJurusan;
     }
 }

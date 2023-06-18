@@ -11,7 +11,7 @@
       <form action="#" th:action="@{/saveJurusan}" th:object="${jurusan}" method="POST">
         <div class="form-group">
             <label for="jurusan">Jurusan</label>
-            <input type="text" id="jurusan" th:field="*{jurusan}" placeholder="Jurusan" class="form-control">
+            <input type="text" id="jurusan" th:field="*{namaJurusan}" placeholder="Jurusan" class="form-control">
         </div>
 
         <button type="submit" class="btn btn-info col-2">Save Jurusan</button>
