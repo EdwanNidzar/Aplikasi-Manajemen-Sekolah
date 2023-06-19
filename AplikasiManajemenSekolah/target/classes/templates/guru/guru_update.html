@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Data Guru</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h2>Update Data Kelas</h2>
+  <br>
+  <form action="#" th:action="@{/saveGuru}" th:object="${guru}" method="POST">
+
+    <input type="hidden" th:field="*{id}" />
+
+    <div class="form-group">
+      <label for="nip">NIP</label>
+      <input type="text" name="nip" id="nip" th:field="*{nip}" placeholder="NIP" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="nama">NIP</label>
+      <input type="text" name="nama" id="nama" th:field="*{nama_guru}" placeholder="NIP" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="tempat_lahir_guru">Tempat lahir</label>
+      <input type="text" name="tempat_lahir_guru" id="tempat_lahir_guru" th:field="*{tempat_lahir_guru}" placeholder="Tempat lahir" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="tanggal_lahir_guru">Tanggal Lahir</label>
+      <input type="date" name="tanggal_lahir_guru" id="tanggal_lahir_guru" th:field="*{tanggal_lahir_guru}" placeholder="Tanggal Lahir" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="jenis_kelamin_guru">Jenis Kelamin</label>
+      <select name="jenis_kelamin_guru" id="jenis_kelamin_guru" th:field="*{jenis_kelamin_guru}" class="form-control">
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="alamat_guru">Alamat Guru</label>
+      <input type="text" name="alamat_guru" id="alamat_guru" th:field="*{alamat_guru}" placeholder="Alamat Guru" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email_guru">Email Guru</label>
+      <input type="email" name="email_guru" id="email_guru" th:field="*{email_guru}" placeholder="Email Guru" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="nomor_telp_guru">Nomor Telephone Guru</label>
+      <input type="text" name="nomor_telp_guru" id="nomor_telp_guru" th:field="*{nomor_telp_guru}" placeholder="Nomor Telephone Guru" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-info col-2">Save Data Guru</button>
+
+  </form>
+</div>
+</body>
+</html>
