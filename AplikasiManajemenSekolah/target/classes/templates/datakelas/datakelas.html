@@ -27,7 +27,7 @@
         <td th:text="${kelas.id}"></td>
         <td th:text="${kelas.nama_kelas}"></td>
         <td> <a th:href="@{/updateDataKelas/{id}(id=${kelas.id})}" class="btn btn-primary">Update</a>
-          <a th:href="@{/deleteDataKelas/{id}(id=${kelas.id})}" class="btn btn-danger">Delete</a>
+          <a th:href="@{/deleteDataKelas/{id}(id=${kelas.id})}" onclick="return confirm('Yakin ingin menghapus Data ini')" class="btn btn-danger">Delete</a>
         </td>
       </tr>
       </tbody>

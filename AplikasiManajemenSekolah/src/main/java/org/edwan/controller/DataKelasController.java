@@ -19,14 +19,14 @@ public class DataKelasController {
     @GetMapping("/datakelas")
     public String viewDatakelas(Model model){
         model.addAttribute("listDataKelas", dataKelasService.getAllDataKelas());
-        return "datakelas";
+        return "datakelas/datakelas";
     }
 
     @GetMapping("/newDataKelas")
     public String showNewDataKelasForm(Model model) {
         DataKelas dataKelas = new DataKelas();
         model.addAttribute("dataKelas", dataKelas);
-        return "new_datakelas";
+        return "datakelas/new_datakelas";
     }
 
     @PostMapping("/saveDataKelas")
@@ -43,7 +43,7 @@ public class DataKelasController {
 
         // set employee as a model attribute to pre-populate the form
         model.addAttribute("dataKelas", dataKelas);
-        return "update_datakelas";
+        return "datakelas/update_datakelas";
     }
 
     @GetMapping("/deleteDataKelas/{id}")
