@@ -12,6 +12,9 @@ public class Jurusan {
 
     private String namaJurusan;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "jurusan", fetch = FetchType.LAZY)
+    private Siswa siswa;
+
     public long getId() {
         return id;
     }
@@ -26,5 +29,13 @@ public class Jurusan {
 
     public void setNamaJurusan(String namaJurusan) {
         this.namaJurusan = namaJurusan;
+    }
+
+    public Siswa getSiswa() {
+        return siswa;
+    }
+
+    public void setSiswa(Siswa siswa) {
+        this.siswa = siswa;
     }
 }

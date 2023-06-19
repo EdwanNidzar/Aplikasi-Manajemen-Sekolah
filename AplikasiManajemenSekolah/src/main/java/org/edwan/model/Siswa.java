@@ -34,14 +34,12 @@ public class Siswa {
     private String email_siswa;
     private String nomor_telp_siswa;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "id_kelas")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_kelas", referencedColumnName = "id")
     private DataKelas data_kelas;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "id_jurusan")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_jurusan", referencedColumnName = "id")
     private Jurusan jurusan;
 }
 

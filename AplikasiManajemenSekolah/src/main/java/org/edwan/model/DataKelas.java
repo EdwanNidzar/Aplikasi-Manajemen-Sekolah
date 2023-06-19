@@ -11,6 +11,9 @@ public class DataKelas {
     private long id;
     private String nama_kelas;
 
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "data_kelas", fetch = FetchType.LAZY)
+    private Siswa siswa;
+
     public long getId() {
         return id;
     }
@@ -25,5 +28,13 @@ public class DataKelas {
 
     public void setNama_kelas(String nama_kelas) {
         this.nama_kelas = nama_kelas;
+    }
+
+    public Siswa getSiswa() {
+        return siswa;
+    }
+
+    public void setSiswa(Siswa siswa) {
+        this.siswa = siswa;
     }
 }
