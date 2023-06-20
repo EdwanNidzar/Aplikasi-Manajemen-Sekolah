@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Save Siswa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2>New Data Siswa</h2>
+    <br>
+    <form action="#" th:action="@{/saveSiswa}" th:object="${siswa}" method="POST">
+        <div class="form-group">
+            <label for="nip">NIS</label>
+            <input type="text" name="nis" id="nip" th:field="*{nis}" placeholder="NIS" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="nama_siswa">Nama Siswa</label>
+            <input type="text" name="nama_siswa" id="nama_siswa" th:field="*{nama_siswa}" placeholder="Nama Siswa" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="tempat_lahir_siswa">Tempat lahir</label>
+            <input type="text" name="tempat_lahir_siswa" id="tempat_lahir_siswa" th:field="*{tempat_lahir_siswa}" placeholder="Tempat lahir" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="tanggal_lahir_siswa">Tanggal Lahir</label>
+            <input type="date" name="tanggal_lahir_siswa" id="tanggal_lahir_siswa" th:field="*{tanggal_lahir_siswa}" placeholder="Tanggal Lahir" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="jenis_kelamin_siswa">Jenis Kelamin</label>
+            <select name="jenis_kelamin_siswa" id="jenis_kelamin_siswa" th:field="*{jenis_kelamin_siswa}" class="form-control">
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="alamat_siswa">Alamat Siswa</label>
+            <input type="text" name="alamat_siswa" id="alamat_siswa" th:field="*{alamat_siswa}" placeholder="Alamat Siswa" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email_siswa">Email Siswa</label>
+            <input type="email" name="email_siswa" id="email_siswa" th:field="*{email_siswa}" placeholder="Email Siswa " class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="nomor_telp_siswa">Nomor Telephone Siswa</label>
+            <input type="text" name="nomor_telp_siswa" id="nomor_telp_siswa" th:field="*{nomor_telp_siswa}" placeholder="Nomor Telephone Siswa" class="form-control">
+        </div>
+
+<!--        // form input kelas-->
+<!--        // data diambil dari entity datakelas-->
+        <div class="form-group">
+            <label for="kelas">Kelas</label>
+            <select th:field="*{data_kelas}" name="kelas" id="kelas"  class="form-control">
+            <option value=""  disabled selected> PILIH KELAS</option>
+                <th:block th:each="k : ${listKelas}">
+                    <option th:text="${k.nama_kelas}" th:value="${k.id}"></option>
+                </th:block>
+            </select>
+        </div>
+
+<!--        // form input jurusan-->
+<!--        // data diambil dari entity jurusan-->
+        <div class="form-group">
+            <label for="jurusan">Jurusan</label>
+            <select th:field="*{jurusan}" name="jurusan" id="jurusan"  class="form-control">
+                <option value="" disabled selected> PILIH JURUSAN</option>
+                <th:block th:each="j : ${listJurusan}">
+                    <option th:text="${j.namaJurusan}" th:value="${j.id}"></option>
+                </th:block>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-info col-2">Save Data Guru</button>
+
+    </form>
+</div>
+</body>
+</html>
