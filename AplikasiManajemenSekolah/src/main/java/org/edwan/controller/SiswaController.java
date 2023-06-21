@@ -22,6 +22,12 @@ import java.util.List;
 @Controller
 public class SiswaController {
 
+    public SiswaController(DataKelasService dataKelasService, JurusanService jurusanService, SiswaService siswaService) {
+        this.dataKelasService = dataKelasService;
+        this.jurusanService = jurusanService;
+        this.siswaService = siswaService;
+    }
+
     @Autowired
     DataKelasService dataKelasService;
     JurusanService jurusanService;
@@ -67,6 +73,12 @@ public class SiswaController {
         model.addAttribute("listJurusan", jurusan); // jurusan
 
         return "siswa/siswa_update";
+    }
+
+    @GetMapping("/deleteSiswa/{id}")
+    public String deleteSiswa(@PathVariable(value = "id") long id) {
+        this.siswaService.deleteSiswaById(id);
+        return "redirect:/siswa";
     }
 
 
